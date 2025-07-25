@@ -1,0 +1,29 @@
+{
+    "gpio": {
+        "flame_sensor_pin": 17,
+        "buzzer_pin": 18
+    },
+    "detection": {
+        "check_interval": 0.5,
+        "debounce_time": 2.0,
+        "min_detection_duration": 1.0
+    },
+    "notifications": {
+        "sound_enabled": true,
+        "sound_duration": 3.0,
+        "email_enabled": false,
+        "email_config": {
+            "smtp_server": "smtp.gmail.com",
+            "smtp_port": 587,
+            "sender_email": "votre_email@gmail.com",
+            "sender_password": "votre_mot_de_passe_app",
+            "recipient_email": "destinataire@gmail.com"
+        }
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "flame_detector.log",
+        "max_size_mb": 10
+    }
+}
+

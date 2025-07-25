@@ -1,0 +1,25 @@
+# Détecteur de Flamme Raspberry Pi - Dépendances Python
+# =====================================================
+
+# Bibliothèques GPIO pour Raspberry Pi
+gpiozero>=1.6.2
+
+# Framework web pour l'interface
+Flask>=2.0.0
+
+# Utilitaires système
+psutil>=5.8.0
+
+# Gestion des emails (optionnel)
+# Inclus dans la bibliothèque standard Python
+
+# Pour le développement et les tests (optionnel)
+pytest>=6.0.0
+flake8>=4.0.0
+
+# Note: Sur Raspberry Pi, il est recommandé d'installer gpiozero via apt:
+# sudo apt install python3-gpiozero
+# 
+# Les autres dépendances peuvent être installées via pip:
+# pip3 install -r requirements.txt
+
