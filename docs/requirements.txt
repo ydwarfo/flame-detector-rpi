@@ -7,6 +7,12 @@ gpiozero>=1.6.2
 # Framework web pour l'interface
 Flask>=2.0.0
 
+# MCP server SDK (Model Context Protocol — PicoClaw tool integration)
+mcp>=1.0.0
+
+# TTS audio generation (one-time, for scripts/generate_audio.py)
+gtts>=2.3.0
+
 # Utilitaires système
 psutil>=5.8.0
 

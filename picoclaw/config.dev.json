@@ -1,0 +1,43 @@
+{
+  "_comment": "Development config — macOS laptop. Uses Claude API instead of local Ollama.",
+
+  "model_list": [
+    {
+      "model_name": "dev",
+      "model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+
+  "agents": [
+    {
+      "name": "candle",
+      "model": "dev",
+      "system_prompt_file": "picoclaw/system_prompt.dev.md",
+      "memory": {
+        "enabled": true,
+        "store": "/tmp/candle_memory_dev.jsonl",
+        "max_events": 100
+      },
+      "mcp_servers": [
+        {
+          "name": "sensor",
+          "command": "python3",
+          "args": ["mcp/sensor_server.py"],
+          "description": "Flame sensor — runs in simulation mode on macOS (auto-toggles every 5s)"
+        },
+        {
+          "name": "audio",
+          "command": "python3",
+          "args": ["mcp/audio_server.py"],
+          "description": "Audio — uses afplay (MP3) and say (TTS) on macOS"
+        },
+        {
+          "name": "messages",
+          "command": "python3",
+          "args": ["mcp/messages_server.py"],
+          "description": "Messages — reads from data/messages.json (no cloud call in dev)"
+        }
+      ]
+    }
+  ]
+}

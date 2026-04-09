@@ -1,0 +1,50 @@
+{
+  "_comment": "PicoClaw configuration for the Connected Talking Candle.",
+
+  "model_list": [
+    {
+      "_comment_local": "Production — local Ollama on the RPi (offline-first)",
+      "model_name": "local",
+      "model": "ollama/gemma2:2b",
+      "api_base": "http://localhost:11434"
+    },
+    {
+      "_comment_dev": "Development — swap model_name to 'dev' in agent config to use this",
+      "model_name": "dev",
+      "model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+
+  "agents": [
+    {
+      "name": "candle",
+      "model": "local",
+      "system_prompt_file": "picoclaw/system_prompt.md",
+      "memory": {
+        "enabled": true,
+        "store": "~/.picoclaw/candle_memory.jsonl",
+        "max_events": 500
+      },
+      "mcp_servers": [
+        {
+          "name": "sensor",
+          "command": "python3",
+          "args": ["mcp/sensor_server.py"],
+          "description": "Flame sensor state, burn session and history"
+        },
+        {
+          "name": "audio",
+          "command": "python3",
+          "args": ["mcp/audio_server.py"],
+          "description": "Speaker playback — play audio files or synthesise speech"
+        },
+        {
+          "name": "messages",
+          "command": "python3",
+          "args": ["mcp/messages_server.py"],
+          "description": "Gift-giver message queue — fetch and mark messages as played"
+        }
+      ]
+    }
+  ]
+}

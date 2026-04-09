@@ -30,6 +30,10 @@ sudo apt install -y python3 python3-pip python3-venv git
 echo "📦 Installation des bibliothèques GPIO..."
 sudo apt install -y python3-gpiozero python3-rpi.gpio
 
+# Installation de l'outil de lecture audio (MP3 via ALSA, sans display)
+echo "📦 Installation de mpg123 (lecture audio)..."
+sudo apt install -y mpg123
+
 # Installation de Flask pour la version web
 echo "📦 Installation de Flask..."
 pip3 install flask

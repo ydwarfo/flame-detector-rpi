@@ -1,0 +1,9 @@
+.deploy.env
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+audio/*.mp3
+audio/*.wav
+data/
+~/.picoclaw/

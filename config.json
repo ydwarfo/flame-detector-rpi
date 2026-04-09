@@ -8,6 +8,16 @@
         "debounce_time": 2.0,
         "min_detection_duration": 1.0
     },
+    "voice": {
+        "enabled": true,
+        "hello_file": "hello.mp3",
+        "goodbye_file": "goodbye.mp3",
+        "language": "en"
+    },
+    "audio": {
+        "output": "headphone",
+        "volume_percent": 80
+    },
     "notifications": {
         "sound_enabled": true,
         "sound_duration": 3.0,
